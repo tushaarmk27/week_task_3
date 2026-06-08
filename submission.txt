@@ -1,0 +1,8 @@
+Report of the encountered errors while deploying
+
+Stage #1
+    Error: npm error Missing script: "build"
+    Broken: "compile":"next_build",
+    Fixed: "build":"next_build",
+    Why: In package.json there was no "build" it was replaced by "compile" which vercel cant recognise
+
