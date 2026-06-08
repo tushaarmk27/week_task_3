@@ -6,3 +6,8 @@ Stage #1
     Fixed: "build":"next_build",
     Why: In package.json there was no "build" it was replaced by "compile" which vercel cant recognise
 
+Stage #2
+    Error/Broken:  import LaunchBanner from "@/app/components/ui/LaunchBanner";
+    Fixed: import LaunchBanner from "./components/LaunchBanner";
+    Why: The project directory doesnt have a /ui/ folder under components, LaunchBanner is directly under /components
+    
