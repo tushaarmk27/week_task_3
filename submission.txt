@@ -8,6 +8,5 @@ Stage #1
 
 Stage #2
     Error/Broken:  import LaunchBanner from "@/app/components/ui/LaunchBanner";
-    Fixed: import LaunchBanner from "./components/LaunchBanner";
-    Why: The project directory doesnt have a /ui/ folder under components, LaunchBanner is directly under /components
-    
+    Fixed: import LaunchBanner from "./components/widgets/LaunchBanner";
+    Why: The project directory doesnt have a /ui/ folder under components, LaunchBanner is under /components/widgets
