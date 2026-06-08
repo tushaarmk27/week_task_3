@@ -25,3 +25,23 @@ Stage #3
             }
     Why: LaunchBanner.js imported date-fns, but it wasnt mentioned in that dependencies of the package.json
 
+Stage #4
+    Broken: in vercel.json
+            {
+                "buildCommand": "npm run build",
+                "outputDirectory":"dist"
+                "framework": "nextjs"
+            }
+    Fixed: {
+                "buildCommand": "npm run build",
+                
+                "framework": "nextjs"
+            }
+    Why: Vercel was forced to build it inside output directory dist but dist was not found. So to build it in the default directory I deleted the text.
+        Even after deleting the error was not resolved, Had to disable the override to dist in Vercel project settings.
+
+Stage #5
+    Broken: Vercel has completed deploying and the deployment is ready but the page couldn't load in the browser.
+    Fixed: Added an env variable in the vercel dashboard settings
+            Key:NEXT_PUBLIC_LAUNCH_CODE , value:CIPHER_DEPLOY_SUCCESS
+    Why: This is a browser runtime error, occurs untill the env variable is added according to the LaunchBanner.js      
